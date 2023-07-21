@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Link from 'next/link';
+import LinkButton from '../base/LinkButton';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -131,10 +131,12 @@ const data: Data[] = [
 
 const ShiftSmart = () => {
   return (
-    <section className="bg-pricing-mobile lg:bg-pricing bg-no-repeat bg-right-bottom lg:bg-right-top py-16 md:py-24 lg:py-32 px-5">
+    <section className="bg-pricing-mobile lg:bg-pricing bg-no-repeat bg-right-bottom lg:bg-right-top py-16 md:py-24 lg:py-32 xl:px-8">
       <div className="max-w-base mx-auto">
-        <h4>ShiftSmart Pricing</h4>
-        <h2>Check Our Pricing Plans</h2>
+        <div className="px-8 xl:px-0">
+          <h4>ShiftSmart Pricing</h4>
+          <h2>Check Our Pricing Plans</h2>
+        </div>
         <Swiper
           pagination={{
             type: 'progressbar',
@@ -143,17 +145,25 @@ const ShiftSmart = () => {
           breakpoints={{
             0: {
               slidesPerView: 1,
-              spaceBetween: 32,
+              spaceBetween: 0,
             },
-            600: {
+            500: {
+              slidesPerView: 1.3,
+              spaceBetween: 0,
+            },
+            640: {
+              slidesPerView: 1.5,
+              spaceBetween: 0,
+            },
+            768: {
               slidesPerView: 2,
-              spaceBetween: 32,
-            },
-            900: {
-              slidesPerView: 3,
-              spaceBetween: 32,
+              spaceBetween: 0,
             },
             1024: {
+              slidesPerView: 2.5,
+              spaceBetween: 0,
+            },
+            1280: {
               slidesPerView: 3,
               spaceBetween: 32,
             },
@@ -161,8 +171,8 @@ const ShiftSmart = () => {
           className="mySwiper mt-7 lg:mt-12"
         >
           {data.map((item) => (
-            <SwiperSlide key={item.id}>
-              <div className="space-y-10 bg-white transition-all duration-200 rounded-[2.9375rem] client-shadow py-7 px-5 lg:py-10 lg:px-11">
+            <SwiperSlide className="px-5 xl:px-0" key={item.id}>
+              <div className="space-y-10 bg-white transition-all duration-200 rounded-[2rem] lg:rounded-[2.9375rem] client-shadow py-7 px-8 lg:py-10 lg:px-11">
                 <div>
                   <h3 className="font-medium text-xl text-brand-primary">
                     {item.subtitle}
@@ -181,9 +191,9 @@ const ShiftSmart = () => {
                     </div>
                   ))}
                 </div>
-                <Link
+                <LinkButton
                   href="/"
-                  className="group w-36 gap-x-4 font-medium flex justify-center items-center lg:hover:-translate-y-1.5 transition-all bg-[#f8f8f8] rounded-full duration-300 py-3 px-7"
+                  className="group w-36 gap-x-4 font-medium flex justify-center items-center bg-[#f8f8f8] text-black lg:hover:text-white lg:hover:bg-black rounded-full duration-200 py-3 px-7"
                 >
                   <span>Contact</span>
                   <span className="group-hover:translate-x-2 transition-all duration-200">
@@ -213,7 +223,7 @@ const ShiftSmart = () => {
                       </defs>
                     </svg>
                   </span>
-                </Link>
+                </LinkButton>
               </div>
             </SwiperSlide>
           ))}

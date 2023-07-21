@@ -16,7 +16,7 @@ const LinkButton: React.FC<iLinkButtonProps> = ({
 }) => {
   return (
     <Link
-      className={`flex items-center text-white rounded-full transition-all duration-200 ${className}`}
+      className={`flex items-center rounded-full transition-all duration-200 ${className}`}
       key={key}
       href={href}
     >

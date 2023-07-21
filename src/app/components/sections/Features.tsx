@@ -98,7 +98,7 @@ const Features: React.FC = () => {
   };
 
   return (
-    <section className="lg:bg-feature bg-no-repeat bg-right-bottom pt-16 md:pb-20 lg:pb-28 relative overflow-hidden">
+    <section className="lg:bg-feature bg-no-repeat bg-right-bottom pt-10 md:pb-20 lg:pb-28 relative overflow-hidden">
       <div className="max-w-base mx-auto relative px-8">
         <h4>ShiftSmart Features</h4>
         <h2>
@@ -113,12 +113,12 @@ const Features: React.FC = () => {
         </p>
       </div>
 
-      <div className="max-w-[83rem] mx-auto flex mt-16">
+      <div className="max-w-[83rem] mx-auto flex py-10">
         {dataSwiperTab.map((tab, index) => (
           <button
             onClick={() => handleTabClick(index)}
             key={tab.id}
-            className={`min-w-[300px] rounded-full relative py-4 text-center ${
+            className={`min-w-[13rem] lg:min-w-[300px] rounded-full relative text-center ${
               activeTab === index ? 'tab-shadow' : 'text-brand-gray-100'
             }`}
           >
@@ -128,7 +128,7 @@ const Features: React.FC = () => {
       </div>
 
       <div className="relative">
-        <div className="max-w-base mx-auto flex flex-col md:flex-row gap-10 items-center mt-16 lg:pb-0">
+        <div className="max-w-base mx-auto flex flex-col md:flex-row gap-10 items-center lg:pb-0">
           <div className="w-full md:w-1/2 px-8">
             <Swiper
               onSwiper={setSwiper}

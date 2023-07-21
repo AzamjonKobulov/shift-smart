@@ -13,13 +13,13 @@ import 'swiper/css/thumbs';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import Button from '../base/Button';
 
-interface FeatureData {
-  id: number;
-  title: string;
-  text1: string;
-  text2: string;
-  img: string;
-}
+// interface FeatureData {
+//   id: number;
+//   title: string;
+//   text1: string;
+//   text2: string;
+//   img: string;
+// }
 
 interface FeatureTabs {
   id: number;
@@ -90,15 +90,15 @@ const Features: React.FC = () => {
     setActiveTab(index);
     if (swiper) {
       if (index >= swiper.params.slidesPerView) {
-        swiper.slideToLoop(index); // If the tab is not visible, slide to the next closest visible tab.
+        swiper.slideToLoop(index);
       } else {
-        swiper.slideTo(index); // If the tab is visible, directly slide to the tab.
+        swiper.slideTo(index);
       }
-    } // Update slide when clicking a tab
+    }
   };
 
   return (
-    <section className="lg:bg-feature bg-no-repeat bg-right-bottom py-16 md:py-24 lg:py-32 relative overflow-hidden">
+    <section className="lg:bg-feature bg-no-repeat bg-right-bottom pt-16 md:py-24 lg:py-32 relative overflow-hidden">
       <div className="max-w-base mx-auto relative px-8">
         <h4>ShiftSmart Features</h4>
         <h2>
@@ -113,12 +113,12 @@ const Features: React.FC = () => {
         </p>
       </div>
 
-      <div className="max-w-[83rem] mx-auto flex py-10">
+      <div className="max-w-[80rem] h-24 lg:h-28 mx-auto flex space-x-5 mt-10 lg:mt-24">
         {dataSwiperTab.map((tab, index) => (
           <button
             onClick={() => handleTabClick(index)}
             key={tab.id}
-            className={`min-w-[13rem] lg:min-w-[300px] rounded-full relative text-center ${
+            className={`text-sm -ml-8 lg:ml-0 lg:text-xl min-w-[17rem] h-2/3 rounded-full text-center ${
               activeTab === index ? 'tab-shadow' : 'text-brand-gray-100'
             }`}
           >
@@ -127,7 +127,7 @@ const Features: React.FC = () => {
         ))}
       </div>
 
-      <div className="relative">
+      <div className="relative mt-6 lg:mt-16">
         <div className="max-w-base mx-auto flex flex-col md:flex-row gap-10 items-center lg:pb-0">
           <div className="w-full md:w-1/2 px-8">
             <Swiper
@@ -139,10 +139,10 @@ const Features: React.FC = () => {
               }}
               navigation={{
                 nextEl: '.next',
-                prevEl: '.prev', // Change 'prev' to 'prevEl'
+                prevEl: '.prev',
               }}
               modules={[FreeMode, Navigation, Thumbs]}
-              className="mySwiper2"
+              className="mySwiper2 min-h-[22rem] lg:min-h-[27em]"
             >
               <SwiperSlide>
                 <div className="order-1 lg:order-2 relative space-y-7 lg:space-y-10">
@@ -254,7 +254,7 @@ const Features: React.FC = () => {
                   </div>
                 </div>
               </SwiperSlide>
-              <div className="absolute hidden lg:flex items-center space-x-5 bottom-0 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0">
+              <div className="absolute flex items-center bottom-0 space-x-5 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0">
                 <Button className="prev w-12 h-12 md:w-14 md:h-14 grid place-content-center rounded-full bg-brand-primary">
                   <svg
                     width="20"
@@ -311,9 +311,9 @@ const Features: React.FC = () => {
               </div>
             </Swiper>
           </div>
-          <div className="relative md:static w-full md:w-1/2 bg-feature-mobile bg-no-repeat bg-cover">
+          <div className="md:static pb-16 w-full md:w-1/2 bg-feature-mobile bg-top bg-no-repeat bg-cover">
             <Image
-              className="w-[60%] lg:w-auto hidden md:block absolute -right-14 xl:right-0 -top-5 lg:-top-10"
+              className="hidden sm:w-[20rem] md:w-[30rem] lg:w-auto md:block absolute right-0 -top-5 lg:-top-20"
               width={654}
               height={654}
               src="/assets/images/img-hero.png"

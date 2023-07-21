@@ -122,7 +122,7 @@ const Clients: React.FC = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="absolute flex items-center -bottom-5 lg:-bottom-10 space-x-5 left-1/2 -translate-x-1/2 lg:left-16 lg:translate-x-0">
+        <div className="absolute flex items-center -bottom-5 lg:-bottom-10 space-x-5 left-1/2 -translate-x-1/2 lg:left-10 lg:translate-x-0">
           <Button className="prev-btn w-14 h-14 grid place-content-center rounded-full bg-brand-primary">
             <svg
               width="20"

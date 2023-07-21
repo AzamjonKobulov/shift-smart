@@ -6,12 +6,12 @@ import Pricing from './components/sections/Pricing';
 
 export default function Home() {
   return (
-    <div className="">
+    <>
       <Hero />
       <ShiftSmart />
       <Features />
       <Clients />
       <Pricing />
-    </div>
+    </>
   );
 }

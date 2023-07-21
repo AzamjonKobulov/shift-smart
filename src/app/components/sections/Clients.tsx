@@ -70,7 +70,6 @@ const Clients: React.FC = () => {
           grabCursor={true}
           slidesPerView={2}
           spaceBetween={40}
-          // loop={true}
           coverflowEffect={{
             stretch: 0,
             depth: 0,
@@ -85,9 +84,9 @@ const Clients: React.FC = () => {
           breakpoints={{
             0: {
               slidesPerView: 1,
-              spaceBetween: 40,
+              spaceBetween: 0,
             },
-            1024: {
+            768: {
               slidesPerView: 2,
               spaceBetween: 40,
             },

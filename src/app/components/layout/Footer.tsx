@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-footer bg-no-repeat bg-cover py-16 md:py-24 lg:py-32 px-5">
       <div className="max-w-base mx-auto px-5">
-        <div className="grid xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-12 lg:gap-16">
+        <div className="grid md:grid-cols-3 xl:grid-cols-4 gap-12 lg:gap-16">
           <div className="relative pb-10 xs:pb-0">
             <Link
               href="/"

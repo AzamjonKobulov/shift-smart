@@ -1,27 +1,49 @@
+@import './fonts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  body {
+    @apply font-proxima-nova;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  h2 {
+    @apply font-bold text-title sm:text-4xl lg:text-[2.8rem] leading-10 lg:leading-11 mt-5 lg:mt-7;
+  }
+
+  h4 {
+    @apply font-medium text-brand-primary lg:text-xl lg:leading-5;
+  }
+
+  p {
+    @apply text-base-sm lg:text-base text-brand-gray-primary;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.bg-nav-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tab-shadow {
+  box-shadow: 0px 20px 25px 6px rgba(152, 152, 152, 0.06);
+  @apply text-brand-primary;
+}
+
+.client-shadow {
+  box-shadow: 0px 20px 25px 6px rgba(152, 152, 152, 0.06);
+}
+
+/* Swiper Styles */
+.swiper-wrapper {
+  @apply lg:!min-h-[28rem] !pb-5;
+}
+
+.swiper-pagination-progressbar {
+  @apply !h-px !bg-[#ddd] !static !mt-10 !w-[95%];
+}
+
+.swiper-pagination-progressbar-fill {
+  @apply !bg-brand-primary;
 }

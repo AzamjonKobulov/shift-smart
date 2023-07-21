@@ -7,12 +7,45 @@ module.exports = {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        base: '77.125rem',
+      },
+      screens: {
+        xs: '31.25rem',
+      },
+      colors: {
+        brand: {
+          primary: '#F75E39',
+          gray: {
+            primary: '#666',
+            100: '#C6C6C6',
+            200: '#C1C1C1',
+          },
+        },
+      },
+      fontFamily: {
+        'proxima-nova': ['proxima-nova', 'sans-serif'],
+      },
+      fontSize: {
+        'base-sm': '0.9375rem',
+        base: '1.0625rem',
+        title: '2rem',
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        hero: "url('/assets/images/bg-hero.png')",
+        clients: "url('/assets/images/bg-clients.png')",
+        pricing: "url('/assets/images/bg-pricing.png')",
+        footer: "url('/assets/images/bg-footer.png')",
+        'pricing-mobile': "url('/assets/images/bg-pricing-mobile.png')",
+        'hero-mobile': "url('/assets/images/bg-hero-mobile.png')",
+        'shift-smart': "url('/assets/images/bg-shift-smart.png')",
+        feature: "url('/assets/images/bg-big.png')",
+        'feature-mobile': "url('/assets/images/bg-big-mobile.png')",
+      },
+      lineHeight: {
+        11: '3.5156rem',
       },
     },
   },
   plugins: [],
-}
+};

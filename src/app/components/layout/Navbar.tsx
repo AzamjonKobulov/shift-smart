@@ -3,10 +3,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect, useContext } from 'react';
-import { useRouter } from 'next/navigation';
 
 import { AppContext } from '@/app/context/AppContext';
-import Button from '../base/Button';
+import LinkButton from '../base/LinkButton';
 
 interface NavLink {
   id: number;
@@ -22,15 +21,13 @@ const links: NavLink[] = [
 ];
 
 const buttons: NavLink[] = [
-  { id: 1, label: 'Contact', path: '/' },
-  { id: 2, label: 'Sign In', path: '/' },
+  { id: 1, label: 'Contact', path: '/go' },
+  { id: 2, label: 'Sign In', path: '/go' },
 ];
 
 const Navbar: React.FC = () => {
   const { handleOpenMenu } = useContext(AppContext);
   const [scrolled, setScrolled] = useState<Boolean>(false);
-
-  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,13 +42,9 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  const handleNavigate = (path: string) => {
-    router.push(path);
-  };
-
   return (
     <header
-      className={`fixed top-0 z-50 inset-x-0 ${
+      className={`fixed top-0 z-50 inset-x-0 transition-all duration-200 ${
         scrolled ? 'bg-white text-brand-gray-primary shadow' : 'text-white'
       }`}
     >
@@ -65,11 +58,13 @@ const Navbar: React.FC = () => {
             alt="Logo"
           />
         </Link>
-        <div className="flex-1 hidden lg:flex items-center">
-          <div className="flex items-center space-x-12 ml-auto">
+        <div className="hidden lg:flex space-x-16 xl:space-x-20 items-center">
+          <div className="flex items-center space-x-12">
             {links.map((link) => (
               <Link
-                className="lg:hover:-translate-y-1.5 transition-all duration-300"
+                className={`lg:hover:text-black transition-all duration-200 ${
+                  scrolled ? 'lg:hover:text-brand-primary' : ''
+                }`}
                 key={link.id}
                 href={link.path}
               >
@@ -79,11 +74,13 @@ const Navbar: React.FC = () => {
           </div>
           <div className="flex items-center ml-auto space-x-3.5">
             {buttons.map((button) => (
-              <Button
+              <LinkButton
+                href={button.path}
                 key={button.id}
-                onClick={() => handleNavigate(button.path)}
-                className={`group gap-x-4 font-medium  lg:hover:-translate-y-1.5 transition-all duration-300 py-2.5 px-7 ${
-                  scrolled ? 'bg-brand-primary' : 'bg-nav-btn'
+                className={`group gap-x-4 font-medium items-center py-2.5 px-7 ${
+                  scrolled
+                    ? 'bg-brand-primary lg:hover:bg-black text-white'
+                    : 'bg-nav-btn lg:hover:bg-white lg:hover:text-black'
                 }`}
               >
                 {button.label}
@@ -94,6 +91,8 @@ const Navbar: React.FC = () => {
                     height="17"
                     viewBox="0 0 18 17"
                     fill="none"
+                    stroke="currentColor"
+                    className={scrolled ? 'lg:hover:fill-black' : ''}
                   >
                     <g clip-path="url(#clip0_128_18)">
                       <path
@@ -113,7 +112,7 @@ const Navbar: React.FC = () => {
                     </defs>
                   </svg>
                 </span>
-              </Button>
+              </LinkButton>
             ))}
           </div>
         </div>

@@ -98,7 +98,7 @@ const Features: React.FC = () => {
   };
 
   return (
-    <section className="lg:bg-feature bg-no-repeat bg-right-bottom pt-10 md:pb-20 lg:pb-28 relative overflow-hidden">
+    <section className="lg:bg-feature bg-no-repeat bg-right-bottom py-16 md:py-24 lg:py-32 relative overflow-hidden">
       <div className="max-w-base mx-auto relative px-8">
         <h4>ShiftSmart Features</h4>
         <h2>

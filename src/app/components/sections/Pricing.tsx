@@ -131,7 +131,7 @@ const data: Data[] = [
 
 const ShiftSmart = () => {
   return (
-    <section className="bg-pricing-mobile lg:bg-pricing bg-no-repeat bg-right-bottom lg:bg-right-top py-16 px-5">
+    <section className="bg-pricing-mobile lg:bg-pricing bg-no-repeat bg-right-bottom lg:bg-right-top py-16 md:py-24 lg:py-32 px-5">
       <div className="max-w-base mx-auto">
         <h4>ShiftSmart Pricing</h4>
         <h2>Check Our Pricing Plans</h2>

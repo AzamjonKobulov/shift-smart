@@ -37,7 +37,7 @@
 
 /* Swiper Styles */
 .swiper-wrapper {
-  @apply lg:!min-h-[28rem] !pb-5;
+  @apply !pb-5;
 }
 
 .swiper-pagination-progressbar {

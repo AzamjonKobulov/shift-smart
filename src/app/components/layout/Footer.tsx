@@ -4,9 +4,9 @@ import Button from '../base/Button';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-footer bg-no-repeat bg-cover py-16 md:py-20 lg:py-28 px-5">
+    <footer className="bg-footer bg-no-repeat bg-cover py-16 md:py-24 lg:py-32 px-5">
       <div className="max-w-base mx-auto px-5">
-        <div className="grid xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-12 lg:gap-16">
+        <div className="grid xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-12 lg:gap-16">
           <div className="relative pb-10 xs:pb-0">
             <Link
               href="/"
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
                 </svg>
               </a>
             </div>
-            <Button className="w-full sm:w-auto justify-between sm:justify-start group gap-x-4 font-bold bg-black text-white lg:hover:-translate-y-1.5 transition-all duration-300 py-5 sm:py-4 px-8 mt-14">
+            <Button className="w-full sm:w-auto justify-between sm:justify-start group gap-x-4 font-bold bg-black text-white  py-5 sm:py-4 px-8 mt-14">
               <span>Contact Us</span>
               <span className="group-hover:translate-x-2 transition-all duration-200">
                 <svg

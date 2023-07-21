@@ -163,7 +163,7 @@ const data: Data[] = [
 
 const ShiftSmart = () => {
   return (
-    <section className="bg-shift-smart bg-no-repeat lg:bg-right-top bg-cover pl-8 pt-16 pb-16">
+    <section className="bg-shift-smart bg-no-repeat lg:bg-right-top bg-cover pl-8 py-16 md:py-24 lg:py-32">
       <div className="max-w-base mx-auto">
         <h4>Why ShiftSmart</h4>
         <h2>
@@ -187,11 +187,15 @@ const ShiftSmart = () => {
             },
             600: {
               slidesPerView: 2.5,
-              spaceBetween: 32,
+              spaceBetween: 40,
             },
             1024: {
               slidesPerView: 4,
-              spaceBetween: 32,
+              spaceBetween: 50,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 70,
             },
           }}
           className="mySwiper mt-12"
@@ -199,7 +203,7 @@ const ShiftSmart = () => {
           {data.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="space-y-5">
-                <div className="w-12 h-12 lg:w-[3.75rem] lg:h-[60px] grid place-content-center rounded-[1.25rem] bg-[#F75E39] bg-opacity-10">
+                <div className="w-12 h-12 lg:w-[3.75rem] lg:h-[3.75rem] grid place-content-center rounded-[1.25rem] bg-[#F75E39] bg-opacity-10">
                   {item.icon}
                 </div>
                 <h5 className="text-base-sm lg:text-lg font-bold leading-6">

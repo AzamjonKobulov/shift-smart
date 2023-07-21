@@ -1,30 +1,28 @@
 import React, { ReactNode } from 'react';
+import Link from 'next/link';
 
-interface iButtonProps {
+interface iLinkButtonProps {
   key?: number;
   children: ReactNode;
-  onClick?: () => void;
   className: string;
-  type?: 'button' | 'submit';
+  href: string;
 }
 
-const Button: React.FC<iButtonProps> = ({
+const LinkButton: React.FC<iLinkButtonProps> = ({
   children,
-  onClick,
   className,
-  type,
   key,
+  href,
 }) => {
   return (
-    <button
+    <Link
       className={`flex items-center text-white rounded-full transition-all duration-200 ${className}`}
-      onClick={onClick}
-      type={type}
       key={key}
+      href={href}
     >
       {children}
-    </button>
+    </Link>
   );
 };
 
-export default Button;
+export default LinkButton;

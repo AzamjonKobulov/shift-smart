@@ -16,7 +16,7 @@ const Hero = () => {
             <br className="hidden lg:block" /> and a lot of work time.
           </p>
           <div className="flex flex-col sm:flex-row justify-center sm:justify-start items-center space-y-5 sm:space-y-0 sm:space-x-4 pt-10">
-            <Button className="w-full sm:w-auto justify-between sm:justify-start group gap-x-4 font-bold bg-brand-primary lg:hover:-translate-y-1.5 transition-all duration-300 py-5 sm:py-4 px-8">
+            <Button className="w-full sm:w-auto justify-between sm:justify-start group gap-x-4 font-bold bg-brand-primary  py-5 sm:py-4 px-8">
               <span>Start free trial</span>
               <span className="group-hover:translate-x-2 transition-all duration-200">
                 <svg
@@ -45,7 +45,7 @@ const Hero = () => {
                 </svg>
               </span>
             </Button>
-            <Button className="w-full sm:w-auto justify-between sm:justify-start group gap-x-4 font-bold bg-black text-white lg:hover:-translate-y-1.5 transition-all duration-300 py-5 sm:py-4 px-8">
+            <Button className="w-full sm:w-auto justify-between sm:justify-start group gap-x-4 font-bold bg-black text-white  py-5 sm:py-4 px-8">
               <span>Contact Us</span>
               <span className="group-hover:translate-x-2 transition-all duration-200">
                 <svg

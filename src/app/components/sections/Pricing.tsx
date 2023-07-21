@@ -193,7 +193,7 @@ const ShiftSmart = () => {
                 </div>
                 <LinkButton
                   href="/"
-                  className="group w-36 gap-x-4 font-medium flex justify-center items-center bg-[#f8f8f8] text-black lg:hover:text-white lg:hover:bg-brand-primary rounded-full duration-200 py-3 px-7"
+                  className="group w-36 gap-x-4 font-medium flex justify-center items-center bg-[#f8f8f8] text-black lg:hover:text-white lg:hover:bg-bra  nd-primary rounded-full duration-200 py-3 px-7"
                 >
                   <span>Contact</span>
                   <span className="group-hover:translate-x-2 transition-all duration-200">

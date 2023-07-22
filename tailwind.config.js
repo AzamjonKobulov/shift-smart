@@ -60,6 +60,9 @@ module.exports = {
       lineHeight: {
         11: "3.5156rem",
       },
+      boxShadow: {
+        base: "0px 20px 25px 6px rgba(152, 152, 152, 0.06)",
+      },
     },
   },
   plugins: [],

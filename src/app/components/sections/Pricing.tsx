@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 import { Pagination } from "swiper/modules";
 import { CheckIcon } from "../icons";
 import Image from "next/image";
+import SectionHeader from "../base/SectionHeader";
 
 interface Data {
   id: number;
@@ -76,12 +77,10 @@ const Pricing = () => {
     <>
       <section className='relative overflow-hidden pt-12 pb-20 lg:pt-28 lg:pb-32'>
         <div className='max-w-base mx-auto px-9'>
-          <div className='relative z-10'>
-            <p className='text-brand-primary font-medium'>ShiftSmart Pricing</p>
-            <h2 className='text-3xl/9 lg:text-display-xl font-bold mt-5'>
-              Check Our Pricing Plans
-            </h2>
-          </div>
+          <SectionHeader
+            section='ShiftSmart Pricing'
+            title='Check Our Pricing Plans'
+          />
 
           <div className='mt-5 md:mt-16 xl:mt-20 '>
             <Swiper
@@ -142,10 +141,11 @@ const Pricing = () => {
 
         <div className='absolute top-0 -right-8 lg:right-0 h-full max-w-[16rem] md:max-w-md lg:max-w-2xl w-full'>
           <Image
+            className='object-cover'
             src='/assets/images/bg-pricing.png'
             alt='Pricing bg'
             fill
-            objectFit='cover'
+            priority
           />
         </div>
       </section>

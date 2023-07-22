@@ -12,7 +12,15 @@
   }
 }
 
+/* .line {
+  @apply before:absolute before:top-0 before:left-0 before:w-full lg:before:h-px lg:before:bg-brand-primary before:z-10;
+} */
+
 /* Swiper Styles */
+.why-shiftsmart-swiper .swiper-wrapper {
+  @apply xl:grid grid-cols-4 xl:gap-10;
+}
+
 .pricing-swiper .swiper-wrapper {
   @apply lg:grid grid-cols-3 lg:gap-6 xl:gap-10;
 }

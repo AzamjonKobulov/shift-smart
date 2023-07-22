@@ -5,29 +5,20 @@
 
 @layer base {
   body {
-    @apply font-proxima-nova;
+    @apply font-proxima-nova bg-white;
   }
-
-  h2 {
-    @apply font-bold text-title sm:text-4xl lg:text-[2.8rem] leading-10 lg:leading-11 mt-5 lg:mt-7;
-  }
-
-  h4 {
-    @apply font-medium text-brand-primary lg:text-xl lg:leading-5;
-  }
-
   p {
-    @apply text-base-sm lg:text-base text-brand-gray-primary;
+    @apply text-body-sm lg:text-body text-brand-gray-primary;
   }
 }
 
 /* Swiper Styles */
-.swiper-wrapper {
-  @apply min-h-fit pb-8;
+.pricing-swiper .swiper-wrapper {
+  @apply lg:grid grid-cols-3 lg:gap-6 xl:gap-10;
 }
 
 .swiper-pagination-progressbar {
-  @apply !h-px !bg-[#ddd] !static !mt-10 !w-[90%] lg:!w-[95%];
+  @apply !h-px !bg-[#ddd] !static !mt-16;
 }
 
 .swiper-pagination-progressbar-fill {

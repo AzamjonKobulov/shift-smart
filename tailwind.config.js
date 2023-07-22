@@ -7,12 +7,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      maxWidth: {
-        base: "77.125rem",
-      },
-      screens: {
-        xs: "31.25rem",
-      },
       colors: {
         brand: {
           primary: "#F75E39",
@@ -20,16 +14,21 @@ module.exports = {
             primary: "#666",
             100: "#C6C6C6",
             200: "#C1C1C1",
+            300: "#f8f8f8",
           },
         },
+      },
+      maxWidth: {
+        base: "74.5rem",
       },
       fontFamily: {
         "proxima-nova": ["proxima-nova", "sans-serif"],
       },
       fontSize: {
-        "base-sm": "0.9375rem",
-        base: "1.0625rem",
-        title: "2rem",
+        "body-sm": "15px",
+        body: "17px",
+        "display-xl": ["45px", "56px"],
+        title: "32px",
       },
       backgroundImage: {
         hero: "url('/assets/images/bg-hero.png')",

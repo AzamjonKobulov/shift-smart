@@ -3,7 +3,7 @@ import LinkButton from '../base/LinkButton';
 
 const Hero = () => {
   return (
-    <section className="relative bg-hero-mobile xs:bg-hero bg-no-repeat bg-80% xs:bg-90% md:bg-80% xxl:bg-70% overflow-hidden bg-right-top py-24 lg:py-28 xl:pt-40 xl:pb-48">
+    <section className="relative bg-hero-mobile xs:bg-hero bg-no-repeat bg-80% xs:bg-90% md:bg-80% lg:bg-50% xl:bg-40% xxl:bg-10% overflow-hidden bg-right-top py-24 lg:py-28 xl:pt-40 xl:pb-48">
       <div className="max-w-base mx-auto flex px-9">
         <div className="space-y-7 pt-5 lg:pt-10">
           <h1 className="lg:w-auto text-title md:text-5xl lg:text-6xl leading-[115%] relative z-30 font-bold">

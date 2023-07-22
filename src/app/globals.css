@@ -41,7 +41,7 @@
 }
 
 .swiper-pagination-progressbar {
-  @apply !h-px !bg-[#ddd] !static !mt-10 !w-5/6 mx-auto xl:mx-0 lg:!w-[95%];
+  @apply !h-px !bg-[#ddd] !static !mt-10 !w-[90%] lg:!w-[95%];
 }
 
 .swiper-pagination-progressbar-fill {

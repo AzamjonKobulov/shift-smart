@@ -27,7 +27,7 @@ const buttons: NavLink[] = [
 const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
   return (
     <div className="absolute inset-0 min-h-screen bg-white pt-5 pb-20 z-50">
-      <div className="flex items-center justify-between pl-5 pr-8">
+      <div className="flex items-center justify-between px-5">
         <Link href="/">
           <Image
             src="/assets/images/logo.png"

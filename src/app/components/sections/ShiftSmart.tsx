@@ -163,7 +163,7 @@ const data: Data[] = [
 
 const ShiftSmart = () => {
   return (
-    <section className="bg-shift-smart bg-no-repeat lg:bg-bottom pl-8 py-16 md:py-24 lg:py-32">
+    <section className="bg-shift-smart bg-no-repeat bg-cover pl-8 pt-12 md:pt-20 lg:pt-28 mt-10">
       <div className="max-w-base mx-auto">
         <h4>Why ShiftSmart</h4>
         <h2>

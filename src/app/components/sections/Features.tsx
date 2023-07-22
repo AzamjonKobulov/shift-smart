@@ -98,7 +98,7 @@ const Features: React.FC = () => {
   };
 
   return (
-    <section className="md:bg-feature bg-no-repeat bg-60% xl:bg-50% bg-right-bottom pt-16 md:py-24 lg:pt-32 pb-4 relative overflow-hidden">
+    <section className="md:bg-feature bg-no-repeat bg-60% xl:bg-50% bg-right-bottom pt-16 md:pt-24 -mb-20 lg:pt-32 pb-4 relative overflow-hidden">
       <div className="max-w-base mx-auto relative px-8">
         <h4>ShiftSmart Features</h4>
         <h2>
@@ -128,7 +128,7 @@ const Features: React.FC = () => {
       </div>
 
       <div className="relative mt-6 lg:mt-16">
-        <div className="max-w-base mx-auto flex flex-col md:flex-row gap-10 items-center lg:pb-0 md:mb-20 lg:mb-32 xl:mb-48 xxl:mb-64">
+        <div className="max-w-base mx-auto flex flex-col md:flex-row lg:gap-10 items-center lg:pb-0 md:mb-20 lg:mb-32 xl:mb-48 xxl:mb-64">
           <div className="w-full md:w-1/2 px-8">
             <Swiper
               onSwiper={setSwiper}

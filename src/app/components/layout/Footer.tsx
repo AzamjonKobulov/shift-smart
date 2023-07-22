@@ -28,7 +28,7 @@ const otherLinks: NavLinks[] = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-footer bg-no-repeat bg-cover py-16 md:py-24 lg:py-32 px-5">
+    <footer className="bg-footer bg-no-repeat bg-cover py-16 md:py-24 lg:py-28 px-5">
       <div className="max-w-base mx-auto px-5">
         <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-12 lg:gap-16">
           <div className="relative pb-10 sm:pb-0">

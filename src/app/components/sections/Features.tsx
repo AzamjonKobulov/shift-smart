@@ -128,7 +128,7 @@ const Features: React.FC = () => {
       </div>
 
       <div className="relative mt-6 lg:mt-16">
-        <div className="max-w-base mx-auto flex flex-col md:flex-row gap-10 items-center lg:pb-0 mb-28">
+        <div className="max-w-base mx-auto flex flex-col md:flex-row gap-10 items-center lg:pb-0 md:mb-28">
           <div className="w-full md:w-1/2 px-8">
             <Swiper
               onSwiper={setSwiper}

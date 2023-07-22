@@ -58,7 +58,7 @@ const Clients: React.FC = () => {
   const [active, setActive] = useState<number>(0);
 
   return (
-    <section className="bg-clients bg-no-repeat bg-cover py-16 md:py-24 lg:py-32">
+    <section className="bg-clients bg-no-repeat bg-cover py-16 md:py-24 lg:py-28">
       <div className="relative max-w-base pb-16 mx-auto lg:px-8">
         <div className="px-8">
           <h4>ShiftSmart Reviews</h4>

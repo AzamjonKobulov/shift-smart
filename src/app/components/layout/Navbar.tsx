@@ -31,15 +31,17 @@ const Navbar: React.FC = () => {
 
   const handleOpen = () => {
     setIsOpen(true);
+    document.body.classList.add('overflow-hidden');
   };
 
   const handleClose = () => {
     setIsOpen(false);
+    document.body.classList.remove('overflow-hidden');
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 80;
+      const isScrolled = window.scrollY > 0;
       setScrolled(isScrolled);
     };
 
@@ -63,7 +65,7 @@ const Navbar: React.FC = () => {
             width={194}
             height={52}
             className="w-full h-full"
-            src="/assets/images/logo.svg"
+            src="/assets/images/logo.png"
             alt="Logo"
           />
         </Link>

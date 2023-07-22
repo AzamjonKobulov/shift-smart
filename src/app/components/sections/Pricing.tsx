@@ -108,7 +108,7 @@ const Pricing = () => {
               {data.map((item) => (
                 <SwiperSlide
                   key={item.id}
-                  className='bg-white rounded-3xl lg:rounded- shadow-base py-10 px-8 xl:px-11'>
+                  className='bg-white rounded-3xl lg:rounded-4xl shadow-base py-10 px-8 xl:px-11'>
                   <p className='font-medium text-xl text-brand-primary'>
                     {item.package}
                   </p>

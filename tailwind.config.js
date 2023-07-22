@@ -62,6 +62,9 @@ module.exports = {
       boxShadow: {
         base: "0px 20px 25px 6px rgba(152, 152, 152, 0.06)",
       },
+      borderRadius: {
+        "4xl": "48px",
+      },
     },
   },
   plugins: [],

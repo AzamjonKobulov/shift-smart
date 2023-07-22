@@ -1,14 +1,13 @@
 "use client";
-
-import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
-import Button from "../base/Button";
+import SectionHeader from "../base/SectionHeader";
+import SwiperButton from "../base/SwiperButton";
+
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import { EffectCoverflow, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 interface Data {
   id: number;
@@ -55,127 +54,67 @@ const data: Data[] = [
 ];
 
 const Clients: React.FC = () => {
-  const [active, setActive] = useState<number>(0);
-
   return (
-    <section className='bg-clients bg-no-repeat bg-cover py-16 md:py-24 lg:py-28'>
-      <div className='relative max-w-base pb-16 mx-auto lg:px-8'>
-        <div className='px-8'>
-          <h4>ShiftSmart Reviews</h4>
-          <h2>What Our Clients Are Saying</h2>
-        </div>
-        <Swiper
-          onSlideChange={(swiper) => setActive(swiper.activeIndex)}
-          effect={"coverflow"}
-          grabCursor={true}
-          slidesPerView={2}
-          spaceBetween={40}
-          coverflowEffect={{
-            stretch: 0,
-            depth: 0,
-            modifier: 0,
-            slideShadows: true,
-          }}
-          navigation={{
-            prevEl: ".prev-btn",
-            nextEl: ".next-btn",
-          }}
-          modules={[EffectCoverflow, Navigation]}
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-              spaceBetween: 0,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 40,
-            },
-          }}
-          className='mySwiper mt-10 lg:mt-20'>
-          {data.map((item, index) => (
-            <SwiperSlide key={item.id}>
-              <div className='relative px-5 md:px-0'>
-                {active !== index ? (
-                  <div className='hidden lg:block absolute inset-0 bg-[#fcfcfc]/60'></div>
-                ) : null}
-                <div className='space-y-6 bg-white transition-all duration-200 rounded-[47px] shadow-base py-7 px-6 lg:py-10 lg:px-11'>
+    <>
+      <section className='bg-clients bg-no-repeat bg-cover py-16 md:py-24 lg:py-28'>
+        <div className='relative max-w-base mx-auto overflow-hidden px-9'>
+          <SectionHeader
+            section='ShiftSmart Reviews'
+            title='What Our Clients Are Saying'
+          />
+
+          <div className='relative overflow-hidden mt-2 lg:mt-12 -mx-10 py-8 px-7'>
+            <Swiper
+              slidesPerView={2}
+              spaceBetween={40}
+              loop
+              navigation={{
+                prevEl: ".client-prev-btn",
+                nextEl: ".client-next-btn",
+              }}
+              modules={[Navigation]}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                640: {
+                  slidesPerView: 2,
+                  spaceBetween: 40,
+                },
+              }}
+              className='!overflow-visible '>
+              {data.map((item) => (
+                <SwiperSlide
+                  key={item.id}
+                  className='bg-white relative shadow-base rounded-4xl py-7 px-6 lg:py-10 lg:px-11'>
                   <h3 className='font-bold text-2xl'>{item.title}</h3>
-                  <p className=''>{item.text}</p>
-                  <div className='flex items-center space-x-2 mt-10'>
-                    <div className='w-14 h-14 rounded-[1.25rem] overflow-hidden'>
-                      <Image
-                        src={item.img}
-                        className='w-full h-full'
-                        width={54}
-                        height={54}
-                        alt='Client Image'
-                      />
-                    </div>
+                  <p className='leading-6 mt-5 lg:mt-6'>{item.text}</p>
+                  <div className='flex items-center space-x-5 mt-10'>
+                    <Image
+                      className='rounded-full object-cover'
+                      src={item.img}
+                      width={52}
+                      height={52}
+                      alt={item.name}
+                    />
                     <div>
-                      <h5 className='font-bold'>{item.name}</h5>
+                      <h5 className='font-bold text-brand-gray-primary'>
+                        {item.name}
+                      </h5>
                       <p className='font-light'>{item.business}</p>
                     </div>
                   </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className='absolute flex items-center -bottom-5 lg:-bottom-10 space-x-5 left-1/2 -translate-x-1/2 lg:left-10 lg:translate-x-0'>
-          <Button className='prev-btn w-14 h-14 grid place-content-center rounded-full bg-brand-primary'>
-            <svg
-              width='20'
-              height='20'
-              viewBox='0 0 20 20'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-              className='rotate-180'>
-              <g clip-path='url(#clip0_128_30)'>
-                <path
-                  d='M18.7284 9.07665L15.0581 5.14581L14.508 5.73498L18.1013 9.58331H0.410126V10.4166H18.0997L14.5072 14.2641L15.0573 14.8533L18.7284 10.9216C19.2031 10.4133 19.2031 9.58498 18.7284 9.07665Z'
-                  fill='white'
-                />
-              </g>
-              <defs>
-                <clipPath id='clip0_128_30'>
-                  <rect
-                    width='18.6747'
-                    height='20'
-                    fill='white'
-                    transform='translate(0.410126)'
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-          </Button>
-          <Button className='next-btn w-14 h-14 grid place-content-center rounded-full bg-brand-primary'>
-            <svg
-              width='20'
-              height='20'
-              viewBox='0 0 20 20'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'>
-              <g clip-path='url(#clip0_128_30)'>
-                <path
-                  d='M18.7284 9.07665L15.0581 5.14581L14.508 5.73498L18.1013 9.58331H0.410126V10.4166H18.0997L14.5072 14.2641L15.0573 14.8533L18.7284 10.9216C19.2031 10.4133 19.2031 9.58498 18.7284 9.07665Z'
-                  fill='white'
-                />
-              </g>
-              <defs>
-                <clipPath id='clip0_128_30'>
-                  <rect
-                    width='18.6747'
-                    height='20'
-                    fill='white'
-                    transform='translate(0.410126)'
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-          </Button>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+          <div className='flex items-center justify-center lg:justify-start space-x-3 mt-4 md:mt-8'>
+            <SwiperButton btn='client' left />
+            <SwiperButton btn='client' />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

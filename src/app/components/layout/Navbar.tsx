@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 
-import { AppContext } from '@/app/context/AppContext';
 import LinkButton from '../base/LinkButton';
+import MobileMenu from '../MobileMenu';
 
 interface NavLink {
   id: number;
@@ -26,8 +26,16 @@ const buttons: NavLink[] = [
 ];
 
 const Navbar: React.FC = () => {
-  const { handleOpenMenu } = useContext(AppContext);
   const [scrolled, setScrolled] = useState<Boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,6 +56,7 @@ const Navbar: React.FC = () => {
         scrolled ? 'bg-white text-brand-gray-primary shadow' : 'text-white'
       }`}
     >
+      {isOpen && <MobileMenu onClose={handleClose} />}
       <nav className="max-w-base mx-auto flex items-center justify-between px-5 py-4 lg:py-5">
         <Link href="/" className="w-40 h-10 md:w-44 md:h-12 lg:w-48 lg:h-14">
           <Image
@@ -116,7 +125,7 @@ const Navbar: React.FC = () => {
             ))}
           </div>
         </div>
-        <button className="lg:hidden" onClick={handleOpenMenu}>
+        <button className="lg:hidden" onClick={handleOpen}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

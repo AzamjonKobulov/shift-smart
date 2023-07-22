@@ -98,7 +98,7 @@ const Features: React.FC = () => {
   };
 
   return (
-    <section className="lg:bg-feature bg-no-repeat bg-right-bottom pt-16 md:py-24 lg:pt-32 pb-4 relative overflow-hidden">
+    <section className="md:bg-feature bg-no-repeat bg-60% xl:bg-50% bg-right-bottom pt-16 md:py-24 lg:pt-32 pb-4 relative overflow-hidden">
       <div className="max-w-base mx-auto relative px-8">
         <h4>ShiftSmart Features</h4>
         <h2>
@@ -128,7 +128,7 @@ const Features: React.FC = () => {
       </div>
 
       <div className="relative mt-6 lg:mt-16">
-        <div className="max-w-base mx-auto flex flex-col md:flex-row gap-10 items-center lg:pb-0 md:mb-28">
+        <div className="max-w-base mx-auto flex flex-col md:flex-row gap-10 items-center lg:pb-0 md:mb-20 lg:mb-32 xl:mb-48 xxl:mb-64">
           <div className="w-full md:w-1/2 px-8">
             <Swiper
               onSwiper={setSwiper}
@@ -313,7 +313,7 @@ const Features: React.FC = () => {
           </div>
           <div className="md:static pb-16 w-full md:w-1/2 bg-feature-mobile bg-top bg-no-repeat bg-cover">
             <Image
-              className="hidden sm:w-[20rem] md:w-[30rem] lg:w-[42rem] md:block absolute right-0 -top-5 lg:-top-24"
+              className="hidden sm:w-[20rem] md:w-[28rem] lg:w-[36rem] xl:w-auto md:block absolute right-0 -top-5 lg:-top-10 xl:-top-24"
               width={654}
               height={654}
               src="/assets/images/img-hero.png"

@@ -95,7 +95,7 @@ const Clients: React.FC = () => {
         >
           {data.map((item, index) => (
             <SwiperSlide key={item.id}>
-              <div className="relative px-5 lg:px-0">
+              <div className="relative px-5 md:px-0">
                 {active !== index ? (
                   <div className="hidden lg:block absolute inset-0 bg-[#fcfcfc]/60"></div>
                 ) : null}

@@ -1,14 +1,11 @@
-'use client';
+interface MobileMenuProps {
+  onClose: () => void;
+}
 
-import { useContext } from 'react';
-import { AppContext } from '../context/AppContext';
-
-const MobileMenu: React.FC = () => {
-  const { handleCloseMenu } = useContext(AppContext);
-
+const MobileMenu: React.FC<MobileMenuProps> = () => {
   return (
     <div className="absolute inset-0 bg-white z-50">
-      <button onClick={handleCloseMenu} className="absolute top-5 right-5">
+      <button className="absolute top-5 right-5">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

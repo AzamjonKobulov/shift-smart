@@ -105,7 +105,7 @@ const Features: React.FC = () => {
           Nam libero tempore, cum soluta nobis est{' '}
           <br className="hidden md:block" /> eligendi optio cumque.{' '}
         </h2>
-        <p className="max-w-[40.625rem] text-xl text-black mt-5">
+        <p className="max-w-[40.625rem] text-base-sm lg:text-xl text-black mt-5">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
           ab illo inventore veritatis et quasi architecto beatae vitae dicta
@@ -254,7 +254,7 @@ const Features: React.FC = () => {
                   </div>
                 </div>
               </SwiperSlide>
-              <div className="absolute flex items-center bottom-0 space-x-5 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0">
+              <div className="absolute hidden lg:flex items-center bottom-0 space-x-5 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0">
                 <Button className="prev w-12 h-12 md:w-14 md:h-14 grid place-content-center rounded-full bg-brand-primary">
                   <svg
                     width="20"

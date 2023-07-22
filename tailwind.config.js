@@ -42,6 +42,16 @@ module.exports = {
         feature: "url('/assets/images/bg-big.png')",
         'feature-mobile': "url('/assets/images/bg-big-mobile.png')",
       },
+      backgroundSize: {
+        auto: 'auto',
+        cover: 'cover',
+        contain: 'contain',
+        '70%': '70%',
+        '50%': '50%',
+        '80%': '80%',
+        '90%': '90%',
+        16: '4rem',
+      },
       lineHeight: {
         11: '3.5156rem',
       },
@@ -49,3 +59,5 @@ module.exports = {
   },
   plugins: [],
 };
+
+// bg-hero-mobile lg:bg-hero bg-no-repeat xs:bg-cover sm:bg-auto overflow-hidden bg-right-top xxl:bg-right-center

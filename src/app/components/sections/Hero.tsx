@@ -1,95 +1,43 @@
-import Image from 'next/image';
-import LinkButton from '../base/LinkButton';
+import Image from "next/image";
+import LinkButton from "../base/LinkButton";
 
 const Hero = () => {
   return (
-    <section className="relative bg-hero-mobile md:bg-hero bg-no-repeat bg-80% md:bg-90% lg:bg-80% xl:bg-80% overflow-hidden bg-right-top pt-24 pb-14 lg:py-28 xl:pt-40 xl:pb-48">
-      <div className="max-w-base mx-auto flex px-9">
-        <div className="space-y-7 pt-5 lg:pt-10">
-          <h1 className="lg:w-auto text-title md:text-5xl lg:text-6xl leading-[115%] relative z-30 font-bold">
-            We’re Here <span className="text-white">To Help</span>
-            <br /> You Build Your <br /> Employee <br className="xl:hidden" />{' '}
-            Scheduling.
+    <section className='relative 3xl:max-w-8xl mx-auto px-9 pb-10 md:pb-24 xl:pb-32 overflow-hidden'>
+      <div className='max-w-base mx-auto md:flex 2xl:!px-9'>
+        <div className='max-w-xs md:max-w-md xl:max-w-2xl pt-16'>
+          <h1 className='text-3xl md:text-4xl xl:text-6xl font-bold md:pr-16 xl:pr-10'>
+            We’re Here <span className='text-white'>To Help</span> You Build
+            Your Employee <br className='md:hidden' /> Scheduling.
           </h1>
-          <p className="w-1/2 sm:text-xl text-black">
-            Build shifts easily and quickly, saving mistakes{' '}
-            <br className="hidden lg:block" /> and a lot of work time.
+          <p className='text-body-sm lg:text-xl text-black w-32 md:w-auto max-w-xs lg:max-w-md mt-7 xl:mt-10'>
+            Build shifts easily and quickly, saving mistakes{" "}
+            <br className='hidden lg:block' /> and a lot of work time.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center sm:justify-start items-center space-y-5 sm:space-y-0 sm:space-x-4 pt-10">
+          <div className='md:flex items-center gap-4 mt-10 xl:mt-14'>
             <LinkButton
-              href="/"
-              className="w-full sm:w-auto justify-between text-white sm:justify-start group gap-x-4 font-bold bg-brand-primary lg:hover:bg-black py-4 px-8"
-            >
-              <span>Start free trial</span>
-              <span className="group-hover:translate-x-2 transition-all duration-200">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="19"
-                  viewBox="0 0 18 17"
-                  fill="none"
-                >
-                  <g clip-path="url(#clip0_128_18)">
-                    <path
-                      d="M16.678 7.71511L13.3368 4.3739L12.836 4.87469L16.107 8.14578H0.00238037V8.85411H16.1056L12.8353 12.1245L13.336 12.6253L16.678 9.28336C17.11 8.85128 17.11 8.14719 16.678 7.71511Z"
-                      fill="white"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_128_18">
-                      <rect
-                        width="17"
-                        height="17"
-                        fill="white"
-                        transform="translate(0.00238037)"
-                      />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </span>
+              href='/'
+              base
+              className='!flex !justify-between bg-brand-primary text-white py-5'>
+              Start Free Trial
             </LinkButton>
             <LinkButton
-              href="/"
-              className="w-full sm:w-auto justify-between sm:justify-start group gap-x-4 font-bold bg-black text-white lg:hover:bg-brand-primary py-4 px-8"
-            >
-              <span>Contact Us</span>
-              <span className="group-hover:translate-x-2 transition-all duration-200">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="19"
-                  viewBox="0 0 18 17"
-                  fill="none"
-                >
-                  <g clip-path="url(#clip0_128_18)">
-                    <path
-                      d="M16.678 7.71511L13.3368 4.3739L12.836 4.87469L16.107 8.14578H0.00238037V8.85411H16.1056L12.8353 12.1245L13.336 12.6253L16.678 9.28336C17.11 8.85128 17.11 8.14719 16.678 7.71511Z"
-                      fill="white"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_128_18">
-                      <rect
-                        width="17"
-                        height="17"
-                        fill="white"
-                        transform="translate(0.00238037)"
-                      />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </span>
+              href='/'
+              base
+              className='!flex !justify-between bg-black hover:bg-brand-primary text-white py-5 mt-3 md:mt-0'>
+              Contact Us
             </LinkButton>
           </div>
         </div>
-        <div>
-          <Image
-            className="absolute w-72 h-[13.5625rem] sm:h-[48%] md:h-2/3 sm:w-1/2 lg:h-3/4 xl:w-auto -right-1/4 xs:right-0 bottom-[40%] sm:bottom-1/3 md:bottom-[20%] lg:bottom-[10%]"
-            width={654}
-            height={654}
-            src="/assets/images/img-hero.svg"
-            alt="Person Image"
-          />
+        <div className='max-w-xs md:max-w-full absolute top-32 -right-32 md:top-0 md:right-0 md:relative flex-1 w-full h-56 md:h-[32rem] xl:h-[40rem]'>
+          <div className='md:absolute md:top-0 -left-32 lg:left-0 w-full md:w-[52rem] h-full'>
+            <Image
+              className='object-contain'
+              src='/assets/images/hero-img.png'
+              alt='Hero '
+              fill
+            />
+          </div>
         </div>
       </div>
     </section>

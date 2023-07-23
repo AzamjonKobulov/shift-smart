@@ -54,7 +54,7 @@ const WhyShiftSmart = () => {
   };
   return (
     <>
-      <section className='relative overflow-hidden py-14 xl:pt-24 xl:pb-32 mt-10'>
+      <section className='relative overflow-hidden py-14 xl:pt-24 xl:pb-32'>
         <div className='max-w-base mx-auto px-9'>
           <SectionHeader
             section='Why ShiftSmart?'
@@ -94,10 +94,10 @@ const WhyShiftSmart = () => {
           </Swiper>
         </div>
 
-        <div className='line absolute top-0 left-0 h-full w-full lg:w-[87%] xl:rounded-r-[7rem] overflow-hidden'>
+        <div className='line absolute top-0 left-0 h-full w-full lg:w-[87%] 3xl:!w-3/4 xl:rounded-r-[7rem] overflow-hidden'>
           <Image
             className='object-cover'
-            src='/assets/images/bg-shift-smart.png'
+            src='/assets/images/bg-shift-image.png'
             alt='Why ShiftSmart bg'
             fill
             priority

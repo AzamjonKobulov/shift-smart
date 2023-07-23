@@ -4,7 +4,7 @@ import LinkButton from "../base/LinkButton";
 const Hero = () => {
   return (
     <section className='relative py-10 md:py-24 xl:py-32 overflow-hidden'>
-      <div className='relative 3xl:max-w-8xl mx-auto z-10'>
+      <div className='relative 3xl:max-w-8xl mx-auto z-10 xl:pt-20'>
         <div className='max-w-base mx-auto md:flex px-9'>
           <div className='max-w-xs md:max-w-md xl:max-w-2xl pt-12 md:pt-16'>
             <h1 className='text-3xl md:text-4xl xl:text-6xl font-bold md:pr-16 xl:pr-10'>
@@ -43,7 +43,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className='w-3/4 h-[91%] 3xl:w-2/3 absolute -top-56 xl:-top-80 -right-24 md:right-0 2xl:-right-20 rotate-12'>
+      <div className='w-3/4 h-[91%] 3xl:w-2/3 absolute -top-56 xl:-top-80 -right-24 md:right-0 xl:-right-4 2xl:-right-20 rotate-12'>
         <Image
           className='object-fill'
           src='/assets/images/bg-effect.png'

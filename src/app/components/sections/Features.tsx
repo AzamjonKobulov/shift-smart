@@ -1,334 +1,154 @@
 "use client";
-
 import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/css";
-import "swiper/css/free-mode";
 import "swiper/css/navigation";
-import "swiper/css/thumbs";
 
 // import required modules
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import Button from "../base/Button";
-
-// interface FeatureData {
-//   id: number;
-//   title: string;
-//   text1: string;
-//   text2: string;
-//   img: string;
-// }
+import { Navigation } from "swiper/modules";
+import SectionHeader from "../base/SectionHeader";
+import SwiperButton from "../base/SwiperButton";
 
 interface FeatureTabs {
   id: number;
   title: string;
 }
 
-// const dataSwiper: FeatureData[] = [
-//   {
-//     id: 1,
-//     title: 'Big title for the first feature right here.',
-//     text1:
-//       'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-//     text2:
-//       'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
-//     img: '/assets/images/img-big.png',
-//   },
-//   {
-//     id: 2,
-//     title: 'Big title for the first feature right here.',
-//     text1:
-//       'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-//     text2:
-//       'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
-//     img: '/assets/images/img-big.png',
-//   },
-//   {
-//     id: 3,
-//     title: 'Big title for the first feature right here.',
-//     text1:
-//       'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-//     text2:
-//       'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
-//     img: '/assets/images/img-big.png',
-//   },
-//   {
-//     id: 4,
-//     title: 'Big title for the first feature right here.',
-//     text1:
-//       'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-//     text2:
-//       'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
-//     img: '/assets/images/img-big.png',
-//   },
-//   {
-//     id: 5,
-//     title: 'Big title for the first feature right here.',
-//     text1:
-//       'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-//     text2:
-//       'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
-//     img: '/assets/images/img-big.png',
-//   },
-// ];
-
-const dataSwiperTab: FeatureTabs[] = [
+const data: FeatureTabs[] = [
   { id: 1, title: "Easy Scheduling" },
   { id: 2, title: "QR Code Check In/Out" },
   { id: 3, title: "Summary of working hours" },
   { id: 4, title: "Additional Feature" },
   { id: 5, title: "As many as you like here " },
+  { id: 6, title: "Easy Scheduling" },
+  { id: 7, title: "QR Code Check In/Out" },
+  { id: 8, title: "Summary of working hours" },
+  { id: 9, title: "Additional Feature" },
+  { id: 10, title: "As many as you like here " },
 ];
 
 const Features: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<number>(0);
-  const [swiper, setSwiper] = useState<any>(null);
-
-  const handleTabClick = (index: number) => {
-    setActiveTab(index);
-    if (swiper) {
-      if (index >= swiper.params.slidesPerView) {
-        swiper.slideToLoop(index);
-      } else {
-        swiper.slideTo(index);
-      }
-    }
-  };
-
   return (
-    <section className='md:bg-feature bg-no-repeat bg-60% xl:bg-50% bg-right-bottom pt-16 md:pt-24 -mb-20 lg:pt-32 pb-4 relative overflow-hidden'>
-      <div className='max-w-base mx-auto relative px-8'>
-        <h4>ShiftSmart Features</h4>
-        <h2>
-          Nam libero tempore, cum soluta nobis est{" "}
-          <br className='hidden md:block' /> eligendi optio cumque.{" "}
-        </h2>
-        <p className='max-w-[40.625rem] text-base-sm lg:text-xl text-black mt-5'>
+    <section className='relative overflow-hidden py-10 lg:py-28'>
+      <div className='max-w-base mx-auto px-9'>
+        <SectionHeader
+          section='ShiftSmart Features'
+          title='Nam libero tempore, cum soluta nobis est eligendi optio cumque. '
+        />
+        <p className='max-w-2xl text-xl text-black mt-6'>
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
           ab illo inventore veritatis et quasi architecto beatae vitae dicta
           sunt explicabo.
         </p>
+        <FeaturesItemSlider />
+      </div>
+      <div className='3xl:max-w-8xl mx-auto relative overflow-hidden '>
+        <FeaturesContent />
       </div>
 
-      <div className='max-w-[80rem] h-24 lg:h-28 mx-auto flex space-x-5 mt-10 lg:mt-24'>
-        {dataSwiperTab.map((tab, index) => (
-          <button
-            onClick={() => handleTabClick(index)}
-            key={tab.id}
-            className={`text-sm -ml-8 lg:ml-0 lg:text-xl min-w-[17rem] h-2/3 rounded-full text-center ${
-              activeTab === index
-                ? "shadow-base text-brand-primary"
-                : "text-brand-gray-100"
-            }`}>
-            <h5 className='text-xl font-bold'>{tab.title}</h5>
-          </button>
-        ))}
-      </div>
-
-      <div className='relative mt-6 lg:mt-16'>
-        <div className='max-w-base mx-auto flex flex-col md:flex-row lg:gap-10 items-center lg:pb-0 md:mb-20 lg:mb-32 xl:mb-48 xxl:mb-64'>
-          <div className='w-full md:w-1/2 px-8'>
-            <Swiper
-              onSwiper={setSwiper}
-              spaceBetween={10}
-              initialSlide={activeTab}
-              onSlideChange={(swiper) => {
-                setActiveTab(swiper.activeIndex);
-              }}
-              navigation={{
-                nextEl: ".next",
-                prevEl: ".prev",
-              }}
-              modules={[FreeMode, Navigation, Thumbs]}
-              className='mySwiper2 min-h-[22rem] lg:min-h-[27em]'>
-              <SwiperSlide>
-                <div className='order-1 lg:order-2 relative space-y-7 lg:space-y-10'>
-                  <div className='max-w-md  space-y-4 lg:space-y-8'>
-                    <h3 className='font-bold text-title leading-9 lg:text-4xl lg:leading-10'>
-                      Big title for the first feature right here.
-                    </h3>
-                    <div className='space-y-4 lg:space-y-8'>
-                      <p>
-                        <b>Sed ut perspiciatis unde</b> omnis iste natus error
-                        sit voluptatem accusantium doloremque laudantium, totam
-                        rem aperiam, eaque ipsa quae ab illo inventore veritatis
-                        et quasi architecto beatae vitae dicta sunt explicabo.
-                      </p>
-                      <p>
-                        Nemo enim ipsam <b>voluptatem quia voluptas sit</b>{" "}
-                        aspernatur aut odit aut fugit, sed quia consequuntur
-                        magni dolores eos qui ratione voluptatem sequi nesciunt.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className='order-1 lg:order-2 relative space-y-7 lg:space-y-10'>
-                  <div className='max-w-md  space-y-4 lg:space-y-8'>
-                    <h3 className='font-bold text-title leading-9 lg:text-4xl lg:leading-10'>
-                      Big title for the first feature right here.
-                    </h3>
-                    <div className='space-y-4 lg:space-y-8'>
-                      <p>
-                        <b>Sed ut perspiciatis unde</b> omnis iste natus error
-                        sit voluptatem accusantium doloremque laudantium, totam
-                        rem aperiam, eaque ipsa quae ab illo inventore veritatis
-                        et quasi architecto beatae vitae dicta sunt explicabo.
-                      </p>
-                      <p>
-                        Nemo enim ipsam <b>voluptatem quia voluptas sit</b>{" "}
-                        aspernatur aut odit aut fugit, sed quia consequuntur
-                        magni dolores eos qui ratione voluptatem sequi nesciunt.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className='order-1 lg:order-2 relative space-y-7 lg:space-y-10'>
-                  <div className='max-w-md  space-y-4 lg:space-y-8'>
-                    <h3 className='font-bold text-title leading-9 lg:text-4xl lg:leading-10'>
-                      Big title for the first feature right here.
-                    </h3>
-                    <div className='space-y-4 lg:space-y-8'>
-                      <p>
-                        <b>Sed ut perspiciatis unde</b> omnis iste natus error
-                        sit voluptatem accusantium doloremque laudantium, totam
-                        rem aperiam, eaque ipsa quae ab illo inventore veritatis
-                        et quasi architecto beatae vitae dicta sunt explicabo.
-                      </p>
-                      <p>
-                        Nemo enim ipsam <b>voluptatem quia voluptas sit</b>{" "}
-                        aspernatur aut odit aut fugit, sed quia consequuntur
-                        magni dolores eos qui ratione voluptatem sequi nesciunt.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className='order-1 lg:order-2 relative space-y-7 lg:space-y-10'>
-                  <div className='max-w-md  space-y-4 lg:space-y-8'>
-                    <h3 className='font-bold text-title leading-9 lg:text-4xl lg:leading-10'>
-                      Big title for the first feature right here.
-                    </h3>
-                    <div className='space-y-4 lg:space-y-8'>
-                      <p>
-                        <b>Sed ut perspiciatis unde</b> omnis iste natus error
-                        sit voluptatem accusantium doloremque laudantium, totam
-                        rem aperiam, eaque ipsa quae ab illo inventore veritatis
-                        et quasi architecto beatae vitae dicta sunt explicabo.
-                      </p>
-                      <p>
-                        Nemo enim ipsam <b>voluptatem quia voluptas sit</b>{" "}
-                        aspernatur aut odit aut fugit, sed quia consequuntur
-                        magni dolores eos qui ratione voluptatem sequi nesciunt.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className='order-1 lg:order-2 relative space-y-7 lg:space-y-10'>
-                  <div className='max-w-md  space-y-4 lg:space-y-8'>
-                    <h3 className='font-bold text-title leading-9 lg:text-4xl lg:leading-10'>
-                      Big title for the first feature right here.
-                    </h3>
-                    <div className='space-y-4 lg:space-y-8'>
-                      <p>
-                        <b>Sed ut perspiciatis unde</b> omnis iste natus error
-                        sit voluptatem accusantium doloremque laudantium, totam
-                        rem aperiam, eaque ipsa quae ab illo inventore veritatis
-                        et quasi architecto beatae vitae dicta sunt explicabo.
-                      </p>
-                      <p>
-                        Nemo enim ipsam <b>voluptatem quia voluptas sit</b>{" "}
-                        aspernatur aut odit aut fugit, sed quia consequuntur
-                        magni dolores eos qui ratione voluptatem sequi nesciunt.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <div className='absolute hidden lg:flex items-center bottom-0 space-x-5 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0'>
-                <Button className='prev w-12 h-12 md:w-14 md:h-14 grid place-content-center rounded-full bg-brand-primary'>
-                  <svg
-                    width='20'
-                    height='20'
-                    viewBox='0 0 20 20'
-                    fill='none'
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='rotate-180'>
-                    <g clip-path='url(#clip0_128_30)'>
-                      <path
-                        d='M18.7284 9.07665L15.0581 5.14581L14.508 5.73498L18.1013 9.58331H0.410126V10.4166H18.0997L14.5072 14.2641L15.0573 14.8533L18.7284 10.9216C19.2031 10.4133 19.2031 9.58498 18.7284 9.07665Z'
-                        fill='white'
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id='clip0_128_30'>
-                        <rect
-                          width='18.6747'
-                          height='20'
-                          fill='white'
-                          transform='translate(0.410126)'
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </Button>
-                <Button className='next w-12 h-12 md:w-14 md:h-14 grid place-content-center rounded-full bg-brand-primary'>
-                  <svg
-                    width='20'
-                    height='20'
-                    viewBox='0 0 20 20'
-                    fill='none'
-                    xmlns='http://www.w3.org/2000/svg'>
-                    <g clip-path='url(#clip0_128_30)'>
-                      <path
-                        d='M18.7284 9.07665L15.0581 5.14581L14.508 5.73498L18.1013 9.58331H0.410126V10.4166H18.0997L14.5072 14.2641L15.0573 14.8533L18.7284 10.9216C19.2031 10.4133 19.2031 9.58498 18.7284 9.07665Z'
-                        fill='white'
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id='clip0_128_30'>
-                        <rect
-                          width='18.6747'
-                          height='20'
-                          fill='white'
-                          transform='translate(0.410126)'
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </Button>
-              </div>
-            </Swiper>
-          </div>
-          <div className='md:static pb-16 w-full md:w-1/2 bg-feature-mobile bg-top bg-no-repeat bg-cover'>
-            <Image
-              className='hidden sm:w-[20rem] md:w-[28rem] lg:w-[36rem] xl:w-auto md:block absolute right-0 -top-5 lg:-top-10 xl:-top-24'
-              width={654}
-              height={654}
-              src='/assets/images/img-hero.png'
-              alt='Person Image'
-            />
-            <Image
-              className='md:hidden w-full right-0 '
-              width={654}
-              height={654}
-              src='/assets/images/img-feature-mobile.svg'
-              alt='Person Image'
-            />
-          </div>
-        </div>
+      <div className='absolute h-1/5 md:h-1/2 w-full md:w-1/2 right-0 md:-right-20 lg:-right-4 2xl:!-right-20 bottom-0 md:-bottom-10'>
+        <Image
+          className='object-fill'
+          src='/assets/images/bg-effect.png'
+          fill
+          alt=''
+        />
       </div>
     </section>
   );
 };
+
+const FeaturesItemSlider = () => {
+  const [active, setActive] = useState<number>(1);
+  return (
+    <div className='-mx-8 2xl:mx-0'>
+      <Swiper
+        loop
+        grabCursor={true}
+        slidesPerView={1.5}
+        spaceBetween={12}
+        breakpoints={{
+          0: {
+            slidesPerView: 1.5,
+          },
+          768: {
+            slidesPerView: 4.5,
+          },
+        }}
+        onSlideChange={(swiper) => {
+          setActive(swiper.realIndex + 1);
+        }}
+        className='!overflow-visible mt-2 lg:mt-16 !p-8 2xl:!-mx-16'>
+        {data.map((item) => (
+          <SwiperSlide
+            key={item.id}
+            className={`${
+              active === item.id
+                ? "bg-white text-brand-primary shadow-base"
+                : "text-brand-gray-100"
+            } !w-fit !shrink-0 rounded-full whitespace-nowrap px-7 py-3 xl:px-10 xl:py-5`}>
+            <p className='xl:text-xl font-bold text-current'>{item.title}</p>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
+};
+
+const slides = [1, 2, 3, 4];
+
+const FeaturesContent = () => (
+  <div className='max-w-base mx-auto md:grid md:grid-cols-2 items-center mt-5 lg:mt-16 px-9'>
+    <div className='max-w-md lg:pb-8'>
+      <Swiper
+        loop
+        slidesPerView={1}
+        spaceBetween={20}
+        navigation={{
+          prevEl: ".features-prev-btn",
+          nextEl: ".features-next-btn",
+        }}
+        modules={[Navigation]}>
+        {slides.map((slide) => (
+          <SwiperSlide key={slide}>
+            <h3 className='text-4xl font-bold'>
+              Big title for the first feature right here.
+            </h3>
+            <p className='mt-6'>
+              <strong>Sed ut perspiciatis unde</strong> omnis iste natus error
+              sit voluptatem accusantium doloremque laudantium, totam rem
+              aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+              architecto beatae vitae dicta sunt explicabo.
+              <br />
+              <br />
+              Nemo enim ipsam <strong>voluptatem quia voluptas sit</strong>{" "}
+              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+              eos qui ratione voluptatem sequi nesciunt.
+            </p>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <div className='hidden md:flex items-center justify-start space-x-3 mt-4 md:mt-14'>
+        <SwiperButton btn='features' left />
+        <SwiperButton btn='features' />
+      </div>
+    </div>
+    <div className='relative md:max-w-lg w-full h-72 md:h-[32rem] lg:h-[38rem] -ml-4 md:ml-auto z-10'>
+      <div className='md:absolute md:top-0 md:left-0 2xl:!left-20 w-full md:w-[50rem] h-full'>
+        <Image
+          className='object-contain'
+          src='/assets/images/feature-img.png'
+          alt='Feature '
+          fill
+        />
+      </div>
+    </div>
+  </div>
+);
 
 export default Features;

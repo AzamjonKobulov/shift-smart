@@ -7,10 +7,9 @@ import Pricing from "./components/sections/Pricing";
 export default function Home() {
   return (
     <>
-      {/* <Hero />
-      <ShiftSmart />
-      <Features />*/}
+      {/* <Hero />*/}
       <WhyShiftSmart />
+      <Features />
       <Clients />
       <Pricing />
     </>

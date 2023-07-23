@@ -20,6 +20,10 @@ module.exports = {
       },
       maxWidth: {
         base: "74.5rem",
+        "8xl": "120rem",
+      },
+      screens: {
+        "3xl": "120rem",
       },
       fontFamily: {
         "proxima-nova": ["proxima-nova", "sans-serif"],
